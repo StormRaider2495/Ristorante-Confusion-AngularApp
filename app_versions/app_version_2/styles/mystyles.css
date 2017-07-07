@@ -1,0 +1,182 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    /*overflow: hidden;*/
+}
+
+.app-container {
+    height: 100%;
+    overflow-y: scroll;
+    /*padding: 0px 5%;
+    border: 2px solid #ddd;*/
+}
+
+.row-header {
+    margin: 0px auto;
+    padding: 0px 0px;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.row-footer {
+    margin: 0px auto;
+    padding: 20px 0px;
+    background-color: #AfAfAf;
+}
+
+.jumbotron {
+    margin: 0px auto;
+    padding: 70px 30px;
+    background: #7986CB;
+    color: floralwhite;
+}
+
+.carousel {
+    background: #1a237e;
+}
+
+.carousel .item {
+    height: 300px;
+}
+
+.carousel .item img {
+    left: 0;
+    min-height: 300px;
+    position: absolute;
+    top: 0;
+}
+
+.navbar-inverse {
+    background: #303f9f;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.active>a:focus {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.open>a {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.open>a:hover {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav>.open>a:focus {
+    background: #1a237e;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    background-color: #303f9f;
+    color: #eeeeee;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: #303f9f;
+    color: #eeeeee;
+}
+
+address {
+    color: #0f0f0f;
+    font-size: 80%;
+    margin: 0px;
+}
+
+body {
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+
+/*.tab-content {
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    margin-bottom: 1em;
+    padding: 10px;
+}*/
+
+.affix {
+    top: 100px;
+}
+
+#carouselButtons {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+}
+
+.tab-content {
+    border: 3px solid #d58a53;
+    margin-bottom: 1em;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #d58a53;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #191816;
+    cursor: default;
+    background-color: rgba(202, 108, 39, 0.79);
+    border: 1px solid #98622f;
+    border-bottom-color: transparent;
+    cursor: pointer;
+}
+
+.nav-tabs>li>a:hover {
+    background-color: antiquewhite;
+    border-color: #d58a53;
+    cursor: pointer;
+}
+
+a {
+    font-weight: bold;
+}
+
+img.media-object.img-thumbnail {
+    border-color: #d58a53;
+    box-shadow: inset 13px -19px 20px 5px rgb(213, 138, 83);
+}
+
+span.label.label-danger.ng-binding {
+    background-color: #bf3737;
+}
+
+span.badge.ng-binding {
+    background-color: rgb(213, 114, 34);
+}
+
+button a {
+    color: #e4e4e4;
+}

@@ -1,0 +1,50 @@
+<div class="container" ng-controller="HomeController">
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+            <h2 class="side-heading">Our Lipsmacking Culinary Creations</h2>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <div class="media-left media-middle">
+                <a>
+                    <img class="media-object img-thumbnail" ng-src="{{dish.image}}" alt="{{dish.name}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading">{{dish.name}}
+                <span class="label label-danger">{{dish.label}}</span>
+                <span class="badge">{{dish.price | currency}}</span>
+              </h2>
+                <p>{{dish.description}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3">
+            <h2 class="side-heading">This Month's Promotions</h2>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <h2>{{promo.heading}}</h2>
+            <p>{{promo.description}}</p>
+        </div>
+    </div>
+
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+            <h2 class="side-heading">Meet our Culinary Specialists</h2>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <div class="col-xs-4">
+              <img ng-src="{{leader.image}}" alt="{{leader.name}}" class="media-object img-thumbnail">
+            </div>
+            <div class="col-xs-8">
+                <h2> {{leader.name}}</h2>
+                <h4>{{leader.designation}}</h4>
+            </div>
+            <div class="col-xs-12">
+              <p>{{leader.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

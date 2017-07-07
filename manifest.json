@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Ristorante con Fusion",
+  "description": "This app opens a contact and feedback form",
+  "version": "1.0",
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": [],
+  "app": {
+    "background": {
+      "scripts": ["popup_script.js"]
+    }
+  },  
+  "minimum_chrome_version": "28",
+  "permissions": ["storage", "alarms", "notifications",
+                "webview", "<all_urls>"]
+}

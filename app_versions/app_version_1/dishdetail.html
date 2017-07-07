@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ristorante Con Fusion: Menu</title>
+    <!-- Bootstrap -->
+    
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="confusionApp" class="app-container">
+
+    <div class="container"  ng-controller="DishDetailController">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object img-thumbnail" ng-src="{{dish.image}}" id="{{dish.name}}" alt="{{dish.name}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{dish.name}}
+                  <span class="label label-danger">{{dish.label}}</span>
+                  <span class="badge">{{dish.price | currency}}</span>
+                </h2>
+                    <p>{{dish.description}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-9 col-xs-offset-1">
+                <div class="container-fluid">
+                    <h4>Customer Comments</h4>
+                    <select ng-model="orderProp" class="pull-right">
+                  <option value="-rating">rating</option>
+                  <option value="author">author</option>
+                  <option value="recent">recent</option>
+                </select>
+                </div>
+                <blockquote ng-repeat="comment in dish.comments | orderBy:orderProp">
+                    <p>{{comment.rating}} stars</p>
+                    <p>{{comment.comment}}</p>
+                    <footer>{{comment.author}}<span>, </span>{{comment.date | date :'longDate'}}</footer>
+                </blockquote>
+
+            </div>
+        </div>
+
+        <!-- COMMENT FORM USING ANGULAR JS SUPPORT -->
+        <div class="container" ng-controller="DishCommentController">
+
+            <form class="form-horizontal" role="form" name="myForm" ng-submit="sendFeedback()" novalidate>
+
+                <div class="form-group" ng-class="{'has-error':myForm.name.$error.required && myForm.name.$dirty }">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter First Name"
+                        ng-model="feedback.author" autocomplete required>
+                        <span ng-show="myForm.name.$dirty">
+                          <span ng-show="myForm.name.$error.required" class="help-block">
+                            Name is required.
+                          </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':myForm.rating.$error.required && myForm.rating.$dirty }">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <div class="radio">
+                          <label ng-repeat="rate in rating">
+                            <input type="radio" name="rating" value="{{rate}}" id="{{rate}}" ng-model="feedback.rating">
+                            {{rate}} stars
+                          </label>
+                        </div>
+                        <span ng-show="myForm.rating.$pristine">
+                          <span ng-show="ratingNeeded" class="text-danger">
+                            Rating is required.
+                          </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':myForm.feedback.$error.required && myForm.feedback.$dirty }">
+                    <label for="feedback" class="col-sm-2 control-label">Your Feedback</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="feedback" name="feedback" rows="12"
+                        ng-model="feedback.comment" required></textarea>
+                        <span ng-show="myForm.feedback.$dirty">
+                          <span ng-show="myForm.feedback.$error.required" class="help-block">
+                            Feedback is required.
+                          </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Post Comment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- build:js scripts/main.js -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    <!-- endbuild -->
+
+</body>
+
+</html>
