@@ -1,5 +1,5 @@
 {
-  "name": "conFusion",
+  "name": "confusion",
   "private": true,
   "devDependencies": {
     "angular": "^1.6.4",
